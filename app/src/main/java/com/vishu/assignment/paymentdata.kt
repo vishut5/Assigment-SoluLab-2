@@ -269,7 +269,7 @@ fun PaymentHistoryCard(item: PaymentHistoryItem) {
             Spacer(modifier = Modifier.height(0.dp))
             Row {
                 Text(text = "Company ", fontSize = 12.sp, color = Color.Gray)
-                Spacer(modifier = Modifier.width(6.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 Text(
                     text = item.company,
                     fontSize = 12.sp,

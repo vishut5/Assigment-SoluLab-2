@@ -14,7 +14,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -115,15 +114,20 @@ fun ConfirmScreen(navController: NavController) {
                             .padding(end = 8.dp)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Button(
-                        onClick = { /* Handle Get OTP */ },
+                    Box(
                         modifier = Modifier
-                            .height(56.dp)
                             .align(Alignment.CenterVertically)
-                            .background(Color(0xFF3B30CC), shape = RoundedCornerShape(25.dp)),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF3B30CC))
+                            .offset(y = 8.dp) // Adjust the vertical offset here
                     ) {
-                        Text("Get OTP", color = Color.White, fontSize = 16.sp)
+                        Button(
+                            onClick = { /* Handle Get OTP */ },
+                            modifier = Modifier
+                                .height(56.dp)
+                                .background(Color(0xFF3B30CC), shape = RoundedCornerShape(25.dp)),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF3B30CC))
+                        ) {
+                            Text("Get OTP", color = Color.White, fontSize = 16.sp)
+                        }
                     }
                 }
             }
@@ -153,11 +157,9 @@ fun ConfirmFieldWithLabel(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 8.dp)
-
         )
     }
 }
-
 
 @Composable
 private fun StatusBarColor() {
